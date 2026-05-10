@@ -1,0 +1,6 @@
+# Mengabaikan file hasil compile agar GitHub tidak penuh
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
