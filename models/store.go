@@ -9,6 +9,7 @@ type Store struct {
 	Alamat       string    `gorm:"type:text" json:"alamat"`
 	Telepon      string    `gorm:"type:varchar(20)" json:"telepon"`
 	BusinessType string    `gorm:"type:varchar(50);default:'kelontong'" json:"business_type"` // kelontong, cafe, laundry
+	PajakPersen  float64   `gorm:"type:decimal(5,2);default:0" json:"pajak_persen"` // Isi 0 untuk warung, 11/12 untuk Cafe
 	CreatedAt    time.Time `json:"created_at"`
 	UpdatedAt    time.Time `json:"updated_at"`
 }

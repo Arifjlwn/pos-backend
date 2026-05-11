@@ -1,4 +1,5 @@
 package config
+
 import (
 	"log"
 	"pos-backend/models"
@@ -23,7 +24,13 @@ func ConnectDatabase() {
 	log.Println("✅ Berhasil terhubung ke Database pos_saas!")
 
 	// Auto Migrate
-	err = database.AutoMigrate(&models.Store{}, &models.User{}, &models.Product{})
+	err = database.AutoMigrate(
+		&models.Store{},
+		&models.User{},
+		&models.Product{},
+		&models.Transaction{},
+		&models.TransactionDetail{},
+	)
 	if err != nil {
 		log.Fatal("Gagal Melakukan Migrasi Database ! Error: ", err)
 	}

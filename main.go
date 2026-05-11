@@ -50,13 +50,18 @@ func main () {
 			})
 		})
 
-		// Rute Produk (CRUD)
+		// -- Rute Produk (CRUD) --
 		api.POST("/products", controllers.CreateProduct)
 		api.GET("/products", controllers.GetProducts)
-
-		// Rute Baru untuk update & delete
 		api.PUT("/products/:id", controllers.UpdateProduct)
 		api.DELETE("/products/:id", controllers.DeleteProduct)
+
+		// -- Rute Karyawan --
+		api.POST("/employees", controllers.CreateEmployee)
+		api.GET("/employees", controllers.GetEmployees)
+
+		// Rute Transaksi (Mesin Kasir)
+		api.POST("/checkout", controllers.CreateTransaction)
 	}
 
 	// Menyalakan server di port 8080
