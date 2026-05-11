@@ -62,6 +62,9 @@ func main () {
 
 		// Rute Transaksi (Mesin Kasir)
 		api.POST("/checkout", controllers.CreateTransaction)
+
+		// Ruter Laporan (Dashboard)
+		api.GET("/report/dashboard", controllers.GetDashboardReport)
 	}
 
 	// Menyalakan server di port 8080
