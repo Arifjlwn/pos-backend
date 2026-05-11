@@ -23,7 +23,7 @@ func ConnectDatabase() {
 	log.Println("✅ Berhasil terhubung ke Database pos_saas!")
 
 	// Auto Migrate
-	err = database.AutoMigrate(&models.Store{}, &models.User{})
+	err = database.AutoMigrate(&models.Store{}, &models.User{}, &models.Product{})
 	if err != nil {
 		log.Fatal("Gagal Melakukan Migrasi Database ! Error: ", err)
 	}
